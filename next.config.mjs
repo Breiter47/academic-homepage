@@ -1,5 +1,5 @@
 const pages = process.env.GITHUB_PAGES === 'true';
-const basePath = pages ? '/academic-homepage' : '';
+const basePath = '';
 export default {
   ...(pages ? { output: 'export' } : {}),
   basePath,
