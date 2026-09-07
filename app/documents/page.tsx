@@ -1,0 +1,4 @@
+import { documents, profile } from "@/content/profile";
+import { EmptyState, PageHeading } from "@/components/ui";
+export const metadata = {title:"Documents · 公开文档"};
+export default function Documents(){return <><PageHeading number="06" english="Documents" title="公开文档" description="个人简历、学术报告与可公开分享的研究资料。"/><div className="page-body">{profile.cvUrl && <article className="record"><p className="eyebrow">PDF / CV</p><h3>历史简历 · 华北理工大学期间</h3><p>原始 PDF，包含当时的联系方式及个人信息。当前身份请参见在线简历。</p><a href={profile.cvUrl} download>下载历史简历 ↓</a></article>}{documents.length ? documents.map((item,i)=><article className="record" key={i}><p className="eyebrow">{item.format}</p><h3>{item.title}</h3><p>{item.description}</p><a href={item.url}>查看文档 ↗</a></article>) : <EmptyState title="文档资料待补充" description="公开报告、演示文稿和技术文档将整理于此。"/>}</div></>}
