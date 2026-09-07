@@ -9,7 +9,7 @@ export const navigation = [
   ["/cv", "CV"], ["/documents", "Documents"],
 ];
 export default function Navigation() {
-  const pathname = usePathname();
+  const pathname = usePathname().replace(/\/$/, "") || "/";
   const [open, setOpen] = useState(false);
   return <header className="site-header"><div className="header-inner">
     <Link href="/" className="brand" onClick={() => setOpen(false)} aria-label="个人学术主页首页"><span className="brand-mark">M<span>·</span>E</span><span>个人学术主页<small>ACADEMIC PROFILE</small></span></Link>
